@@ -743,13 +743,13 @@ let msg = aData[0].msg
  let dData = await db.collection('vUsers').find({stat: 'stat'}).toArray()
      let maindata = await db.collection('balance').find({ userId: ctx.from.id }).toArray()
 let maindaata = await db.collection('balance').find({ userId: ctx.from.id }).toArray()
-let vv = dData[0].value*1
+
  let ann = msg*1
  let bal = maindaata[0].balance*1
 let wd = dbData[0].withdraw
 let rem = bal-ann
 let ass = wd+ann
-let sta = vv+ann
+let sta = ann
 let wallet = maindata[0].address
 ctx.deleteMessage();
 if((msg>bal) | ( msg<min_wd)){
